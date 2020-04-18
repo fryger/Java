@@ -8,20 +8,40 @@ public class Animal {
     File pic;
     private Double weight;
 
+    static final Double DEFAULT_DOG_WEIGHT = 10.0;
+    static final Double DEFAULT_LION_WEIGHT = 180.0;
+    static final Double DEFAULT_OTHER_WEIGHT = 1.0;
+
     public Animal(String species) {
         this.species = species;
         if (species == "Dog") {
-            weight = 10.0;
+            weight = DEFAULT_DOG_WEIGHT;
         } else if (species == "Lion") {
-            weight = 180.0;
+            weight = DEFAULT_LION_WEIGHT;
         } else {
-            weight = 1.0;
+            weight = DEFAULT_OTHER_WEIGHT;
         }
 
     }
 
     void feed() {
-        weight += 0.1;
-        System.out.println("Thx bro, my weight is now " + weight);
+        if (weight <= 0.0) {
+            System.out.println("I'm dead *RIP*");
+
+        } else {
+            weight += 0.1;
+            System.out.println("Thx bro, my weight is now " + weight);
+        }
     }
+
+    void takeForAWalk() {
+        if (weight <= 0.0) {
+            System.out.println("I'm dead *RIP*");
+        } else {
+            weight -= 1;
+            System.out.println("Sir, my weight is now " + weight);
+        }
+    }
+
+
 }

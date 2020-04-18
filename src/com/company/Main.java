@@ -35,6 +35,5 @@ public class Main {
         cat.takeForAWalk();
         cat.takeForAWalk();
 
-        System.out.println(me);
     }
 }

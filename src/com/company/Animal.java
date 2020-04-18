@@ -6,19 +6,22 @@ public class Animal {
     final String species;
     String name;
     File pic;
-    private Double weight = 1.0;
+    private Double weight;
 
     public Animal(String species) {
         this.species = species;
         if (species == "Dog") {
-            weight = 20.0;
+            weight = 10.0;
         } else if (species == "Lion") {
-            weight = 190.0;
+            weight = 180.0;
+        } else {
+            weight = 1.0;
         }
+
     }
 
     void feed() {
-        weight++;
-        System.out.println(weight);
+        weight += 0.1;
+        System.out.println("Thx bro, my weight is now " + weight);
     }
 }

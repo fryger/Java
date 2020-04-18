@@ -3,7 +3,7 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-
+        Car brumek = new Car("Gulia", "Alfa Romeo");
         Animal dog = new Animal("Dog");
         dog.name = "Szarik";
 
@@ -15,6 +15,7 @@ public class Main {
         me.firstName = "Adrian";
         me.lastName = "Warda";
         me.pet = dog;
+        me.car = brumek;
 
         me.pet.feed();
         System.out.println(me.pet.species);
@@ -34,6 +35,6 @@ public class Main {
         cat.takeForAWalk();
         cat.takeForAWalk();
 
-
+        System.out.println(me);
     }
 }

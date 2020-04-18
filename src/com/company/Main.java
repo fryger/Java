@@ -11,8 +11,8 @@ public class Main {
         dog.feed();
         dog.feed();
         Human me = new Human();
-        me.firstName = "asd";
-        me.lastName = "asd";
+        me.firstName = "ja";
+        me.lastName = "ty";
 
         me.pet.feed();
 

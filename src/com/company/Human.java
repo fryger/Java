@@ -54,7 +54,16 @@ public class Human {
     }
 
     public void setCar(Car car) {
-        this.car = car;
+
+        if (this.salary.compareTo(BigDecimal.valueOf(car.getvalue() / 1)) == 1) {
+            System.out.println("Cash");
+            this.car = car;
+        } else if (this.salary.compareTo(BigDecimal.valueOf(car.getvalue() / 12.0)) == 1) {
+            System.out.println("Credit");
+            this.car = car;
+        } else {
+            System.out.println("No car for you");
+        }
     }
 
     public Double getSalary() {
@@ -71,6 +80,4 @@ public class Human {
             this.salary = BigDecimal.valueOf(salary);
         }
     }
-
-
 }

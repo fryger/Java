@@ -63,8 +63,13 @@ public class Human {
     }
 
     public void setSalary(Double salary) {
-        this.balanceHistory.saveHistoryAccountCharge(salary);
-        this.salary = BigDecimal.valueOf(salary);
+        if (salary < 0.0) {
+            System.out.println("The payment can't be negative");
+        } else {
+            System.out.println("Data was submitted to accounting system, Hania from HR have your annex to the contract, ZUS i US knows everything");
+            this.balanceHistory.saveHistoryAccountCharge(salary);
+            this.salary = BigDecimal.valueOf(salary);
+        }
     }
 
 

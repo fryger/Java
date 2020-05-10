@@ -1,9 +1,8 @@
 package com.company;
 
-public class Car {
+public class Car extends Device {
 
     final String model;
-    final String manufacturer;
     private Double mileage;
     String color;
     private Double value;
@@ -25,4 +24,6 @@ public class Car {
     public Double getvalue() {
         return this.value;
     }
+
+
 }

@@ -16,6 +16,6 @@ public class Main {
         me.setPet(new Animal("Lion"));
         me.getPet().name = "Myszojeleń";
 
-
+        me.sellMe();
     }
 }

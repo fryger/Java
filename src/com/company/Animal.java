@@ -2,7 +2,7 @@ package com.company;
 
 import java.io.File;
 
-public class Animal {
+public class Animal implements Edible, Saleable {
     final String species;
     String name;
     File pic;
@@ -46,5 +46,20 @@ public class Animal {
     public Double getWeight() {
 
         return weight;
+    }
+
+    @Override
+    public void beEaten() {
+        weight = 0.0;
+        System.out.println("I'm dead *RIP*");
+    }
+
+    @Override
+    public void sellMe() {
+        if (this.getClass().getName() == "com.company.Human") {
+            System.out.println("Nie wolno sprzedawać ludzi");
+        } else {
+            System.out.println("Moja cena to 100$");
+        }
     }
 }

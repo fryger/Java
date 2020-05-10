@@ -2,7 +2,6 @@ package com.company;
 
 public class Car extends Device {
 
-    final String model;
     private Double mileage;
     String color;
     private Double value;
@@ -26,4 +25,13 @@ public class Car extends Device {
     }
 
 
+    @Override
+    public void turnON() {
+        System.out.println("Yea turn me on");
+    }
+
+    @Override
+    public void sellMe() {
+
+    }
 }

@@ -1,5 +1,8 @@
 package com.company;
 
-public class Device {
+public abstract class Device implements Saleable {
     String manufacturer;
+    String model;
+
+    abstract public void turnON();
 }

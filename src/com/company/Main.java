@@ -2,9 +2,11 @@ package com.company;
 
 import com.company.creatures.Animal;
 
+import java.io.IOException;
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Car brumek = new Car("Giulia", "Alfa Romeo", 1000.0) {
             @Override
@@ -26,7 +28,8 @@ public class Main {
         myWife.setFirstName("Madzia");
         myWife.setLastName("Fryger");
         myWife.setSalary(100000.0);
-
+        Phone erikson = new Phone();
+        me.setPhone(erikson);
         System.out.println(me.toString());
         me.getCar().turnOn();
 
@@ -37,5 +40,7 @@ public class Main {
         }
 
         myWife.getPet().food(50);
+        me.getPhone().installAnnApp("mBank");
+        me.getCar().refuel();
     }
 }

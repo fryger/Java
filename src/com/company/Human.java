@@ -2,26 +2,19 @@ package com.company;
 
 import java.math.BigDecimal;
 
-public class Human extends Animal {
+public class Human {
 
     private String firstName;
     private String lastName;
     private Phone phone;
-    public Animal pet;
+    private Animal pet;
     private Car car;
     private BigDecimal salary;
     private BalanceHistory balanceHistory;
-    public Double cash = 300.0;
 
 
     public Human() {
-        super("home spanins");
         this.balanceHistory = new BalanceHistory();
-
-    }
-
-    public Human(String species) {
-        super(species);
     }
 
     public String getFirstName() {
@@ -89,6 +82,6 @@ public class Human extends Animal {
     }
 
     public String toString() {
-        return firstName + "" + lastName + "" + phone;
+        return firstName + " " + lastName + " " + car;
     }
 }

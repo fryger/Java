@@ -2,6 +2,7 @@ package com.company;
 
 public class Car extends Device {
 
+
     private Double mileage;
     String color;
     private Double value;
@@ -24,14 +25,8 @@ public class Car extends Device {
         return this.value;
     }
 
-
     @Override
-    public void sellMe() {
-
-    }
-
-    @Override
-    public void sellMe(Human buyer, Human seller, Double price) throws Exception {
-
+    public void turnOn() {
+        System.out.println("Yeeah, I'm turned on");
     }
 }

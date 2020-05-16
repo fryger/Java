@@ -4,12 +4,12 @@ public class Phone extends Device {
     Double screenSize;
 
     @Override
-    public void turnON() {
+    public void sellMe() {
 
     }
 
     @Override
-    public void sellMe() {
+    public void sellMe(Human buyer, Human seller, Double price) throws Exception {
 
     }
 }

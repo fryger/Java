@@ -55,11 +55,20 @@ public class Animal implements Edible, Saleable {
     }
 
     @Override
-    public void sellMe() {
-        if (this.getClass().getName() == "com.company.Human") {
-            System.out.println("Nie wolno sprzedawać ludzi");
-        } else {
-            System.out.println("Moja cena to 100$");
+    public void sellMe(Human buyer, Human seller, Double price) throws Exception {
+        if (this instanceof Human) {
+            throw new Exception("NO SLAVERY!!!");
         }
+        if (buyer.cash < price) {
+            throw new Exception("not enough money, sorry");
+        }
+        if (seller.getPet() != this) {
+            throw new Exception("you cannot sell something that is not yours");
+        }
+        buyer.cash -= price;
+        seller.cash += price;
+        buyer.setPet(this);
+        seller.setPet(null);
+        System.out.println(buyer.getFirstName() + " already bought " + this + " from " + seller.getFirstName());
     }
 }

@@ -26,12 +26,12 @@ public class Car extends Device {
 
 
     @Override
-    public void turnON() {
-        System.out.println("Yea turn me on");
+    public void sellMe() {
+
     }
 
     @Override
-    public void sellMe() {
+    public void sellMe(Human buyer, Human seller, Double price) throws Exception {
 
     }
 }

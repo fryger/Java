@@ -42,5 +42,6 @@ public class Main {
         myWife.getPet().food(50);
         me.getPhone().installAnnApp("mBank");
         me.getCar().refuel();
+
     }
 }

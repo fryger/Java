@@ -2,7 +2,7 @@ package com.company;
 
 import java.math.BigDecimal;
 
-public class Human {
+public class Human implements Saleable {
 
     private String firstName;
     private String lastName;
@@ -11,6 +11,7 @@ public class Human {
     private Car car;
     private BigDecimal salary;
     private BalanceHistory balanceHistory;
+    public Double cash = 300.0;
 
 
     public Human() {
@@ -83,5 +84,10 @@ public class Human {
 
     public String toString() {
         return firstName + " " + lastName + " " + car;
+    }
+
+    @Override
+    public void sellMe(Human buyer, Human seller, Double price) throws Exception {
+
     }
 }

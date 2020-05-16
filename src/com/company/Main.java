@@ -15,8 +15,19 @@ public class Main {
         me.setCar(brumek);
         me.setPet(new Animal("Lion"));
         me.getPet().name = "Myszojeleń";
+        Human myWife = new Human();
+        myWife.setFirstName("Madzia");
+        myWife.setLastName("Fryger");
+        myWife.setSalary(100000.0);
 
         System.out.println(me.toString());
         me.getCar().turnOn();
+
+        try {
+            me.getPet().sellMe(myWife, me, 10.0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }

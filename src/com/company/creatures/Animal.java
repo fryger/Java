@@ -1,10 +1,13 @@
-package com.company;
+package com.company.creatures;
+
+import com.company.Human;
+import com.company.Saleable;
 
 import java.io.File;
 
-public class Animal implements Saleable {
+public class Animal implements Saleable, Feedable {
     final String species;
-    String name;
+    public String name;
     File pic;
     private Double weight;
 
@@ -24,7 +27,7 @@ public class Animal implements Saleable {
 
     }
 
-    void feed() {
+    public void feed() {
         if (weight <= 0.0) {
             System.out.println("I'm dead *RIP*");
 
@@ -32,6 +35,11 @@ public class Animal implements Saleable {
             weight += 0.1;
             System.out.println("Thx bro, my weight is now " + weight);
         }
+    }
+
+    @Override
+    public void food(int foodWeight) {
+        System.out.println("I ate " + foodWeight + "kg worth of food.");
     }
 
     void takeForAWalk() {

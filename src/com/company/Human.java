@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.creatures.Animal;
+
 import java.math.BigDecimal;
 
 public class Human implements Saleable {

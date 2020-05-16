@@ -6,7 +6,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Car brumek = new Car("Giulia", "Alfa Romeo", 1000.0);
+        Car brumek = new Car("Giulia", "Alfa Romeo", 1000.0) {
+            @Override
+            public void refuel() {
+
+            }
+        };
         Animal dog = new Animal("Dog");
         dog.name = "Szarik";
         Human me = new Human();

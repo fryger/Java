@@ -53,7 +53,9 @@ public class Main {
         me.showoff();
         me.sorting();
         me.showoff();
-
+        System.out.println(brumek.owners);
         me.getCar(0).sellMe(myWife, me, 10.0);
+        System.out.println(brumek.owners);
+        System.out.println(brumek.transactions());
     }
 }

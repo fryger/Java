@@ -70,9 +70,11 @@ public class Human implements Saleable {
         if (this.salary.compareTo(BigDecimal.valueOf(car.getvalue() / 1)) == 1) {
             System.out.println("Cash");
             this.garage[position] = car;
+            car.owners.add(this);
         } else if (this.salary.compareTo(BigDecimal.valueOf(car.getvalue() / 12.0)) == 1) {
             System.out.println("Credit");
             this.garage[position] = car;
+            car.owners.add(this);
         } else {
             System.out.println("No car for you");
         }

@@ -57,5 +57,16 @@ public class Main {
         me.getCar(0).sellMe(myWife, me, 10.0);
         System.out.println(brumek.owners);
         System.out.println(brumek.transactions());
+        Application Tinder = new Application("Tinder", 2.1, 50.0);
+        Application mBank = new Application("mBank", 1.1, 0.0);
+        System.out.println(erikson.apps);
+        System.out.println(me.cash);
+        erikson.install(me, Tinder);
+        erikson.install(me, mBank);
+        System.out.println(me.cash);
+        erikson.isinstalled(Tinder);
+        erikson.isinstalled("Tinder");
+        erikson.freeapps();
+        System.out.println(erikson.cost());
     }
 }

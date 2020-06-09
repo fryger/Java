@@ -12,11 +12,56 @@ public class Phone extends Device {
     static final String Version = "latest";
     static final String url = "https://javajestsuper.com/";
     static final String proto = "https";
+    List<Application> apps = new ArrayList<Application>();
     List<String> names = new ArrayList<String>() {{
         add("Messenger");
         add("Wykop");
         add("Revolut");
     }};
+
+    public void install(Human me, Application app) {
+        if (me.cash >= app.price) {
+            this.apps.add(app);
+            me.cash -= app.price;
+        }
+    }
+
+    public void isinstalled(Application app) {
+
+        if ((this.apps).contains(app)) {
+            System.out.println("App is installed");
+        } else {
+            System.out.println("error");
+        }
+    }
+
+    public void isinstalled(String app) {
+        for (int i = 0; i < apps.size(); i++) {
+            if ((apps.get(i).name).contains(app)) {
+                System.out.println("App installed");
+            }
+        }
+    }
+
+    public void freeapps() {
+
+        for (int i = 0; i < apps.size(); i++) {
+            if ((apps.get(i).price) == 0.0) {
+                System.out.println(apps.get(i).name);
+            }
+        }
+    }
+
+    public Double cost() {
+        for (int i = 0; i < apps.size(); i++) {
+            Double cost = apps.get(i).price;
+            return cost;
+
+
+        }
+        return null;
+    }
+
 
     @Override
     public void turnOn() {

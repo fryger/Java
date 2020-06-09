@@ -2,13 +2,18 @@ package com.company;
 
 import com.company.creatures.Animal;
 
-import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
 
-        Car brumek = new Car("Giulia", "Alfa Romeo", 1000.0) {
+        Car brumek = new Car("Giulia", "Alfa Romeo", 1000.0, 1994) {
+            @Override
+            public void refuel() {
+
+            }
+        };
+        Car transitek = new Car("Transit", "Ford", 1500.0, 2016) {
             @Override
             public void refuel() {
 
@@ -21,7 +26,8 @@ public class Main {
         me.setLastName("Warda");
         me.setSalary(100000.0);
         me.setPet(dog);
-        me.setCar(brumek);
+        me.setCar(brumek, 1);
+        me.setCar(transitek, 0);
         me.setPet(new Animal("Lion"));
         me.getPet().name = "Myszojeleń";
         Human myWife = new Human();
@@ -31,7 +37,7 @@ public class Main {
         Phone erikson = new Phone();
         me.setPhone(erikson);
         System.out.println(me.toString());
-        me.getCar().turnOn();
+        me.getCar(1).turnOn();
 
         try {
             me.getPet().sellMe(myWife, me, 10.0);
@@ -41,7 +47,13 @@ public class Main {
 
         myWife.getPet().food(50);
         me.getPhone().installAnnApp("mBank");
-        me.getCar().refuel();
+        me.getCar(1).refuel();
 
+        System.out.println(me.wealth());
+        me.showoff();
+        me.sorting();
+        me.showoff();
+
+        me.getCar(0).sellMe(myWife, me, 10.0);
     }
 }

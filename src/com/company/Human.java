@@ -3,6 +3,8 @@ package com.company;
 import com.company.creatures.Animal;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
+
 
 public class Human implements Saleable {
 
@@ -10,14 +12,21 @@ public class Human implements Saleable {
     private String lastName;
     private Phone phone;
     private Animal pet;
-    private Car car;
     private BigDecimal salary;
     private BalanceHistory balanceHistory;
     public Double cash = 300.0;
+    public Car[] garage;
 
+    {
+        garage = new Car[2];
+    }
 
     public Human() {
         this.balanceHistory = new BalanceHistory();
+    }
+
+    public void setGarage(int size) {
+        this.garage = new Car[size];
     }
 
     public String getFirstName() {
@@ -52,18 +61,18 @@ public class Human implements Saleable {
         this.pet = pet;
     }
 
-    public Car getCar() {
-        return car;
+    public Car getCar(int position) {
+        return garage[position];
     }
 
-    public void setCar(Car car) {
+    public void setCar(Car car, int position) {
 
         if (this.salary.compareTo(BigDecimal.valueOf(car.getvalue() / 1)) == 1) {
             System.out.println("Cash");
-            this.car = car;
+            this.garage[position] = car;
         } else if (this.salary.compareTo(BigDecimal.valueOf(car.getvalue() / 12.0)) == 1) {
             System.out.println("Credit");
-            this.car = car;
+            this.garage[position] = car;
         } else {
             System.out.println("No car for you");
         }
@@ -84,12 +93,28 @@ public class Human implements Saleable {
         }
     }
 
-    public String toString() {
-        return firstName + " " + lastName + " " + car;
-    }
 
     @Override
     public void sellMe(Human buyer, Human seller, Double price) throws Exception {
 
     }
+
+    public double wealth() {
+        double wealth = 0.0;
+        for (int i = 0; i < garage.length; i++) {
+            wealth += garage[i].value;
+        }
+        return wealth;
+    }
+
+    public void showoff() {
+        for (int i = 0; i < garage.length; i++) {
+            System.out.println(garage[i].model);
+        }
+    }
+
+    public void sorting() {
+        Arrays.sort(garage);
+    }
 }
+
